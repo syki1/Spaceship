@@ -1,5 +1,7 @@
 :root {
     --primary-color: #09fcfd;
+    --size-unit: 64px;
+    --animation-time: 200ms;
 }
 
 * 
@@ -69,6 +71,54 @@ body
 
 .modal__button:hover {
     box-shadow: 0px 0px 20px 5px var(--primary-color);
+}
+
+.spaceship {
+    width: var(--size-unit);
+    height: var(--size-unit);
+    background-image: url('../img/ship_sprite.png');
+    animation: move8 var(--animation-time) steps(8) infinite;
+}
+
+@keyframes move8 {
+    from {
+        background-position-x: 0px;
+    }
+    to {
+        background-position-x: 512px;
+    }
+}
+
+@keyframes move5 {
+    from {
+        background-position-x: 0px;
+    }
+    to {
+        background-position-x: 320px;
+    }
+}
+
+@keyframes move9 {
+    from {
+        background-position-x: 0px;
+    }
+    to {
+        background-position-x: 1152px;
+    }
+}
+
+.enemy {
+    width: var(--size-unit);
+    height: var(--size-unit);
+    background-image: url('../img/smallenemy_sprite.png');
+    animation: move5 200ms steps(5) infinite;
+}
+
+.enemy--big {
+    width: calc(var(--size-unit) * 2);
+    height: calc(var(--size-unit) * 2);
+    background-image: url('../img/bigenemy_sprite.png');
+    animation: move9 200ms steps(9) infinite;
 }
 
 .modal__text {
