@@ -2,6 +2,7 @@
     --primary-color: #09fcfd;
     --size-unit: 64px;
     --animation-time: 200ms;
+    --explosion-animation-time: 600ms;
 }
 
 * 
@@ -107,6 +108,25 @@ body
     }
 }
 
+@keyframes move17 {
+    from {
+        background-position-x: 1088px;
+    }
+    to {
+        background-position-x: 0px;
+    }
+
+}
+
+@keyframes move17_big {
+    from {
+        background-position-x: 2176px;
+    }
+    to {
+        background-position-x: 0px;
+    }
+}
+
 .enemy {
     width: var(--size-unit);
     height: var(--size-unit);
@@ -119,6 +139,27 @@ body
     height: calc(var(--size-unit) * 2);
     background-image: url('../img/bigenemy_sprite.png');
     animation: move9 200ms steps(9) infinite;
+}
+
+.explosion {
+    width: var(--size-unit);
+    height: var(--size-unit);
+    background-image: url('../img/explosion_sprite2.png');
+    animation: move17 var(--explosion-animation-time) steps(17) forwards;
+}
+
+.explosion--big {
+    width: calc(var(--size-unit) * 2);
+    height: calc(var(--size-unit) * 2);
+    background-image: url('../img/bigexplosion_sprite2.png');
+    animation: move17_big var(--explosion-animation-time) steps(17) forwards;
+}
+
+.missle {
+    width: 12px;
+    height: 24px;
+    background-size: cover;
+    background-image: url('../img/missle.png');
 }
 
 .modal__text {
